@@ -1,6 +1,8 @@
 Ansible Role: EPEL
 ==================
 
+[![Build Status](https://travis-ci.org/giovtorres/ansible-role-epel.svg?branch=master)](https://travis-ci.org/giovtorres/ansible-role-epel)
+
 Installs the `epel-release` package on EL 6 and 7 platforms.
 
 Requirements
