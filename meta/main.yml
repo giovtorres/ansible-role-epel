@@ -1,14 +1,15 @@
+---
 galaxy_info:
   author: Giovanni Torres
   description: Installs the EPEL Yum repository.
   license: license BSD
   min_ansible_version: 1.6
   platforms:
-  - name: EL
-    versions:
-    - 6
-    - 7
+    - name: EL
+      versions:
+        - 6
+        - 7
   galaxy_tags:
-  - packaging
-  - system
+    - packaging
+    - system
 dependencies: []
