@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    epel_state: absent
+  roles:
+    - role: ansible-role-epel
