@@ -4,7 +4,24 @@
     name: epel-release
     state: "{{ epel_state }}"
 
-- name: Import EPEL RPM GPG key.
+- name: Import EPEL RPM GPG key into DB.
   rpm_key:
-    state: "{{ epel_state }}"
+    state: present
     key: "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
+  when: epel_state == "present"
+
+- name: Remove EPEL RPM GPG key from DB.
+  rpm_key:
+    state: absent
+    key: 352C64E5
+  when:
+    - epel_state == "absent"
+    - ansible_distribution_major_version|int == 7
+
+- name: Remove EPEL RPM GPG key from DB.
+  rpm_key:
+    state: absent
+    key: 0608B895
+  when:
+    - epel_state == "absent"
+    - ansible_distribution_major_version|int == 6
